@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Route::get('ola/{nome}', 'TesteController@index');
 
+Route::get('notas', 'TesteController@notas');
+
 // Autentication routes
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
