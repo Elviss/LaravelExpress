@@ -1,9 +1,11 @@
-<!Doctype html>
-<html>
-<head>
-	<title>Olá</title>
-</head>
-<body>
-	<h1>Olá {{$nome}}</h1>
-</body>
-</html>
+@extends('template')
+
+@section('title')
+	Olá
+@endsection
+
+@section('content')
+	<h1>Olá {{ $nome }}</h1>
+@endsection
+
+
