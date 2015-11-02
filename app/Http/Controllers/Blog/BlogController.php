@@ -8,8 +8,32 @@
 
 namespace App\Http\Controllers\Blog;
 
+use Illuminate\Http\Request;
 
-class BlogController
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+use Faker\Factory as Faker;
+
+class BlogController extends Controller
 {
+    public function index()
+    {
+        $faker = Faker::create();
 
+        $posts = [];
+
+        foreach(range(1,4) as $i)
+        {
+            $posts[$i]['data'] = $faker->date('d-m-Y');
+            $posts[$i]['autor'] = $faker->name();
+            $posts[$i]['imagem'] = $faker->imageUrl(640, 350);
+            $posts[$i]['titulo'] = $faker->sentence();
+            $posts[$i]['subtitulo'] = '';
+            $posts[$i]['texto'] = $faker->realText(1000);
+            $posts[$i]['tags'] = '';
+        }
+
+        return view('blog.index', compact('posts'));
+    }
 }
