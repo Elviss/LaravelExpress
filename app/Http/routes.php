@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Route::get('ola/{nome}', 'TesteController@index');
 Route::get('notas', 'TesteController@notas');
@@ -27,4 +27,4 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-Route::get('blog', 'Blog\BlogController@index');
+Route::get('/', 'Blog\BlogController@index');
