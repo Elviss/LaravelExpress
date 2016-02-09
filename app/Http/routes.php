@@ -28,3 +28,5 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 Route::get('/', 'Blog\BlogController@index');
+
+Route::get('blog', 'PostsController@index');
