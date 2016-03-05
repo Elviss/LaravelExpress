@@ -11,12 +11,6 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
-Route::get('ola/{nome}', 'TesteController@index');
-Route::get('notas', 'TesteController@notas');
 
 // Autentication routesYo
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -29,4 +23,6 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 Route::get('/', 'Blog\BlogController@index');
 
-Route::get('blog', 'PostsController@index');
+//Route::get('blog', 'PostsController@index');
+
+Route::get('admin', 'PostsAdminController@index');
