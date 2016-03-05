@@ -18,4 +18,6 @@
         </tr>
         @endforeach
     </table>
+
+    {!! $posts->render() !!}
 @endsection
