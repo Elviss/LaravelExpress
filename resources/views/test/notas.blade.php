@@ -1,18 +1,16 @@
 @extends('template')
 
 @section('title')
-	Minhas Anotações
-@stop
+    Notas
+@endsection
 
 @section('content')
+    <h1>Anotações</h1>
 
-	<h1>Anotacoes</h1>
+    <ul>
+        @foreach($notas as $nota)
+            <li>{{ $nota }}</li>
+        @endforeach
+    </ul>
+@endsection
 
-	<ul>
-		@foreach($notas as $nota)
-			<li>{{ $nota }}</li>
-		@endforeach
-		
-	</ul>
-
-@stop
