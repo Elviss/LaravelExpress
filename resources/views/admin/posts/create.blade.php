@@ -15,6 +15,13 @@
 
     @include('admin.posts._form')
 
+    <!-- Tags Form Input -->
+
+    <div class="form-group">
+        {!! Form::label('tags','Tags') !!}
+        {!! Form::textarea('tags', null, ['class'=>'form-control', 'id'=>'tags']) !!}
+    </div>
+
     <div class="form-group">
         {!! Form::submit('Create Post', ['class'=>'btn btn-primary']) !!}
     </div>

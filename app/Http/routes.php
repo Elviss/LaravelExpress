@@ -23,7 +23,7 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 Route::get('/', 'Blog\BlogController@index');
 
-//Route::get('blog', 'PostsController@index');
+Route::get('blog', 'PostsController@index');
 
 Route::group(['prefix'=>'admin'], function(){
 
