@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers\Blog;
 
+use App\Post;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -33,6 +34,10 @@ class BlogController extends Controller
             $posts[$i]['texto'] = $faker->realText(1000);
             $posts[$i]['tags'] = '';
         }
+
+        $posts = Post::all();
+
+        // dd($posts);
 
         return view('blog.index', compact('posts'));
     }

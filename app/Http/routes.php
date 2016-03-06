@@ -43,6 +43,10 @@ Route::get('blog', 'PostsController@index');
 
 Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function(){
 
+    Route::get('', ['as' => 'admin', function(){
+        return "dashboard";
+    }]);
+
     Route::group(['prefix'=>'posts'], function(){
 
         Route::get('', ['as' => 'admin.posts.index', 'uses' => 'PostsAdminController@index']);

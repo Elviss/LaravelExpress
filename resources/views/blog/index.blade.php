@@ -26,13 +26,13 @@
                 @foreach ($posts as $post)
                     <div class="post-preview">
                         <a href="{{-- $post->url($tag) --}}">
-                            <h2 class="post-title">{{ $post['titulo'] }}</h2>
+                            <h2 class="post-title">{{ $post['title'] }}</h2>
                             @if ($post['subtitulo'])
                                 <h3 class="post-subtitle">{{ $post['subtitulo'] }}</h3>
                             @endif
                         </a>
                         <p class="post-meta">
-                            Postado em {{ $post['data'] }}
+                            Postado em {{ $post['created_at'] }}
                             {{--@if (count($post['tags']))--}}
                                 {{--in--}}
                                 {{--{!! join(', ', $post->tagLinks()) !!}--}}

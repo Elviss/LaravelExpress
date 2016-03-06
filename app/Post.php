@@ -18,6 +18,15 @@ class Post extends Model
         return $this->belongsToMany('App\Tag', 'posts_tags');
     }
 
+    public function getCreatedAtAttribute($value)
+    {
+        $datetime = explode(' ', $value);
+
+        $date = explode('-', $datetime[0]);
+
+        return  $date[2]."-".$date[1]."-".$date[0];
+    }
+
     public function getTagListAttribute()
     {
         $tags = $this->tags()->lists('name')->all();
