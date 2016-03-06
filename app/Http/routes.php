@@ -11,8 +11,24 @@
 |
 */
 
+/*Route::get('/auth', function(){
 
-// Autentication routesYo
+    if(Auth::attempt(['email'=>'elvis@email.ccom', 'password'=>123456])){
+        return 'oi';
+    } else {
+        return 'falhou';
+    }
+
+//    if(Auth::check()){
+//        return 'true';
+//    }
+});
+
+Route::get('/auth/logout', function(){
+    Auth::logout();
+});*/
+
+// Autentication routes
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
@@ -25,7 +41,7 @@ Route::get('/', 'Blog\BlogController@index');
 
 Route::get('blog', 'PostsController@index');
 
-Route::group(['prefix'=>'admin'], function(){
+Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function(){
 
     Route::group(['prefix'=>'posts'], function(){
 
