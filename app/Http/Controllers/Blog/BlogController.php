@@ -24,16 +24,16 @@ class BlogController extends Controller
 
         $posts = [];
 
-        foreach(range(1,4) as $i)
-        {
-            $posts[$i]['data'] = $faker->date('d-m-Y');
-            $posts[$i]['autor'] = $faker->name();
-            $posts[$i]['imagem'] = $faker->imageUrl(640, 350);
-            $posts[$i]['titulo'] = $faker->sentence();
-            $posts[$i]['subtitulo'] = '';
-            $posts[$i]['texto'] = $faker->realText(1000);
-            $posts[$i]['tags'] = '';
-        }
+//        foreach(range(1,4) as $i)
+//        {
+//            $posts[$i]['data'] = $faker->date('d-m-Y');
+//            $posts[$i]['autor'] = $faker->name();
+//            $posts[$i]['imagem'] = $faker->imageUrl(640, 350);
+//            $posts[$i]['titulo'] = $faker->sentence();
+//            $posts[$i]['subtitulo'] = '';
+//            $posts[$i]['texto'] = $faker->realText(1000);
+//            $posts[$i]['tags'] = '';
+//        }
 
         $posts = Post::all();
 
