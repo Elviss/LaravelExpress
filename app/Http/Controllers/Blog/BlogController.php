@@ -14,13 +14,13 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use Faker\Factory as Faker;
+//use Faker\Factory as Faker;
 
 class BlogController extends Controller
 {
     public function index()
     {
-        $faker = Faker::create();
+        //$faker = Faker::create();
 
         $posts = [];
 
